@@ -9,6 +9,5 @@ void main() {
   double number3 = 7.8;
 
   int number = 15;
-  double num2 =
-      number; // We can`t assign value of type integer to variable of type double.
+  //double num2 = number; We can`t assign value of type integer to variable of type double.
 }

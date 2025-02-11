@@ -5,7 +5,7 @@ void main() {
   name = 15; // We can change the type after that.
 
   var age = 15; // The initial type will be Integer.
-  age = "Ali"; //We can't change the type after that.
+  //age = "Ali"; We can't change the type after that.
 
   var name1; // If we dosn`t gave it value in initial we can use it like dynamic
   name1 = 15;

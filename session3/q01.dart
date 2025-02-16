@@ -5,6 +5,22 @@ optional parameters for different operations (e.g., addition of multiple numbers
 
 import 'dart:io';
 
+double add(double num1, double num2) {
+  return num1 + num2;
+}
+
+double subtract(double num1, double num2) {
+  return num1 - num2;
+}
+
+double multiply(double num1, double num2) {
+  return num1 * num2;
+}
+
+double divide(double num1, double num2) {
+  return num1 / num2;
+}
+
 void main() {
   print("Enter 1st number:");
   var input1 = stdin.readLineSync();
@@ -14,24 +30,8 @@ void main() {
   var input2 = stdin.readLineSync();
   var number2 = double.parse(input2!);
 
-  double add(double num1, double num2) {
-    return num1 + num2;
-  }
-
-  double subtract(double num1, double num2) {
-    return num1 - num2;
-  }
-
-  double multiply(double num1, double num2) {
-    return num1 * num2;
-  }
-
-  double divide(double num1, double num2) {
-    return num1 / num2;
-  }
-
-  print({add(number1, number2)});
-  print({subtract(number1, number2)});
-  print({multiply(number1, number2)});
-  print({divide(number1, number2)});
+  print(add(number1, number2));
+  print(subtract(number1, number2));
+  print(multiply(number1, number2));
+  print(divide(number1, number2));
 }

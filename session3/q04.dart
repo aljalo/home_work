@@ -2,16 +2,14 @@
 Use Map and List to create a program that stores weather data for different cities (temperature,
 humidity, etc.). Write a function that can retrieve and print weather details using a city name. */
 
-class WeatherReport {
-  Map<String, Map<String, dynamic>> weatherData = {};
-  void addCityWeather(String city, double temperature, int humidity) {
-    weatherData[city] = {
-      'temperature': temperature,
-      'humidity': humidity,
-    };
-  }
+void main() {
+  Map<String, String> weatherData = {
+    "Baghdad": "Temperature: 40°C, Humidity: 20%",
+  };
 
-  void getWeather(String city) {
-    print(city);
-  }
+  printWeather("Baghdad", weatherData);
+}
+
+void printWeather(String city, Map<String, String> weatherData) {
+  print({city, weatherData[city]});
 }

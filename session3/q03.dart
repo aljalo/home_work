@@ -5,20 +5,16 @@ use of for-each loops. */
 
 class Task {
   String description;
-  DateTime dueDate;
+  String day;
   bool isCompleted;
 
-  Task(this.description, this.dueDate, this.isCompleted);
+  Task(this.description, this.day, this.isCompleted);
 }
 
 class ToDoList {
   List<Task> tasks = [];
-  void addTask(String description, DateTime dueDate) {
-    tasks.add(Task(description, dueDate, false));
-  }
-
-  void removeTask(String description) {
-    tasks.removeWhere((task) => task.description == description);
+  void addTask(String description, String day) {
+    tasks.add(Task(description, day, false));
   }
 
   void updateTaskStatus(String description, bool isCompleted) {
@@ -27,14 +23,18 @@ class ToDoList {
   }
 
   void displayTasks() {
-    if (tasks.isEmpty) {
-      print("No tasks.");
-    } else {
-      print("To Do:");
-      tasks.forEach((task) {
-        print(
-            "${task.description} (Due: ${task.dueDate}, Completed: ${task.isCompleted})");
-      });
-    }
+    tasks.forEach((task) {
+      print({task.description, task.day, 'Complete ${task.isCompleted}'});
+    });
   }
+}
+
+void main() {
+  var toDoList = ToDoList();
+  toDoList.addTask("Buy food", "Monday");
+  toDoList.addTask("Make Homework", "Sunday");
+  toDoList.displayTasks();
+
+  toDoList.updateTaskStatus('Buy food', false);
+  toDoList.displayTasks();
 }

@@ -4,30 +4,30 @@ displaying items. Use functions with return types and optional/named parameters.
 handle possible null values.*/
 
 class GroceryListManager {
-  List<String> _groceryItems = [];
+  List<String> groceryItems = [];
 
-  void addItem({String item = ''}) {
-    _groceryItems.add(item);
+  void addItem({required String item}) {
+    groceryItems.add(item);
     print(item);
   }
 
-  void removeItem({String item = ''}) {
-    _groceryItems.remove(item);
+  void removeItem({required String item}) {
+    groceryItems.remove(item);
     print(item);
   }
 
   List<String> displayItems() {
-    return _groceryItems;
+    return groceryItems;
   }
 }
 
 void main() {
   var groceryManager = GroceryListManager();
 
-  groceryManager.addItem(item: "Apples");
   groceryManager.addItem(item: "Bananas");
-  print({groceryManager.displayItems()});
+  groceryManager.addItem(item: "Apples");
+  print(groceryManager.displayItems());
 
   groceryManager.removeItem(item: "Apples");
-  print({groceryManager.displayItems()});
+  print(groceryManager.displayItems());
 }

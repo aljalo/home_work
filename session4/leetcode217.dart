@@ -13,3 +13,11 @@ void main() {
   List<int> num = [1, 2, 3, 4, 4];
   print(isDuplicate(num));
 }
+
+//bool isDuplicate(Lisy<int> nums) {
+// if(nums.length == nums.toSet().length){
+//   return false;
+// }else{
+//   return true;
+// }
+// }

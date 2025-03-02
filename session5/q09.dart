@@ -10,10 +10,10 @@ Implement a Library class with methods:
 Ensure that the system correctly updates the book's availability.
 */
 class Book {
-  String title, author, no;
+  String title, author, isbn;
   bool isAvailable = true;
 
-  Book(this.title, this.author, this.no);
+  Book(this.title, this.author, this.isbn);
 }
 
 class Library {
@@ -22,7 +22,7 @@ class Library {
 
   bool barrowBook(String isbn) {
     for (var book in books) {
-      if (book.no == isbn && book.isAvailable) {
+      if (book.isbn == isbn && book.isAvailable) {
         book.isAvailable = false;
         return true;
       }
@@ -30,9 +30,9 @@ class Library {
     return false;
   }
 
-  void returnBook(String no) {
+  void returnBook(String isbn) {
     for (var book in books) {
-      if (book.no == no) {
+      if (book.isbn == isbn) {
         book.isAvailable = true;
       }
     }

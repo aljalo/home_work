@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'loan.dart';
 
 class PersonalLoan extends Loan {

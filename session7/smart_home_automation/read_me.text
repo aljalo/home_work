@@ -1,0 +1,9 @@
+Exercise 2: Smart Home Automation
+A smart home system controls different devices such as lights, air conditioners, and security
+cameras.
+Each device has an on and off functionality.
+Some devices have additional functionalities, e.g., adjusting temperature or motion detection.
+The system should allow multiple devices to be controlled together.
+Question:
+How would you design a system where different devices share common functionalities but also have
+unique behaviors?

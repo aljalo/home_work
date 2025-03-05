@@ -5,6 +5,6 @@ abstract class Loan {
 
   Loan(this.borrowerName, this.loanAmount, this.interestRate);
 
-  // دالة مجردة لحساب القسط الشهري
+  // دالة لحساب القسط الشهري
   double calculateMonthlyInstallment(int months);
 }

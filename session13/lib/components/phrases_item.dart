@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:session13/components/item_info.dart';
-import 'package:session13/models/number.dart';
+import 'package:session13/models/item_model.dart';
 
 class PhrasesItem extends StatelessWidget {
   const PhrasesItem({super.key, required this.color, required this.item});

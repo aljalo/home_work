@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:session13/models/number.dart';
+import 'package:session13/models/item_model.dart';
 
 class ItemInfo extends StatelessWidget {
   const ItemInfo({super.key, required this.item});

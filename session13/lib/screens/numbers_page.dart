@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:session13/components/list_item.dart';
-import 'package:session13/models/number.dart';
+import 'package:session13/models/item_model.dart';
 
 class NumbersPage extends StatelessWidget {
   const NumbersPage({super.key});

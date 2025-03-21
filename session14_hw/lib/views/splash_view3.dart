@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:session14_hw/views/login_page.dart';
+import 'package:session14_hw/widgets/custom_button.dart';
+import 'package:session14_hw/widgets/custom_dot_indicator.dart';
 
 class SplashView3 extends StatelessWidget {
   const SplashView3({super.key});
@@ -11,63 +13,57 @@ class SplashView3 extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset('assets/images/3.png'),
+          Image.asset('assets/images/3.png', height: 300, width: 300),
           ListTile(
-            title: Center(
-              child: Text(
-                'Fast and resposibily \n delivery by our courir',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            title: Text(
+              'Fast and resposibily \n delivery by our courir',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                //fontFamily: 'Inter',
               ),
+              textAlign: TextAlign.center,
             ),
-            subtitle: Center(
+            subtitle: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
               child: Text(
-                'Welcome to Freash Fruits Grocery application \n Welcome to Freash Fruits Grocery application',
+                'Welcome to Freash Fruits Grocery application Welcome to Freash Fruits Grocery application',
+                style: TextStyle(fontFamily: 'Poppins', fontSize: 14),
                 maxLines: 2,
+                textAlign: TextAlign.center,
               ),
             ),
           ),
+          SizedBox(height: 10),
+          CustomDotIndicator(dotPosition: 2),
           SizedBox(height: 30),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              fixedSize: Size(318, 60),
-              backgroundColor: Colors.black,
-            ),
+          CustomButton(
+            backgroundColor: Colors.black,
+            borderSideColor: Colors.black,
+            text: 'CREATE AN ACCOUNT',
+            color: Colors.white,
             onPressed: () {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => const LoginPage()),
               );
             },
-            child: Text(
-              'CREATE AN ACCOUNT',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.white,
-              ),
-            ),
           ),
           SizedBox(height: 20),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              fixedSize: Size(318, 60),
-              backgroundColor: Colors.white,
-            ),
+          CustomButton(
+            backgroundColor: Colors.white,
+            borderSideColor: Colors.black,
+
+            text: 'LOGIN',
+            color: Colors.black,
             onPressed: () {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => const LoginPage()),
               );
             },
-            child: Text(
-              'LOGIN',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.black,
-              ),
-            ),
           ),
+          SizedBox(height: 30),
         ],
       ),
     );

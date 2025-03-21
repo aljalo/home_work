@@ -27,8 +27,11 @@ class _SplashViewState extends State<SplashView> {
       backgroundColor: Color(0xffFEC54B),
 
       body: Align(
-        alignment: Alignment.center,
-        child: SvgPicture.asset('assets/images/01.svg'),
+        alignment: Alignment.bottomCenter,
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 150),
+          child: SvgPicture.asset('assets/images/01.svg'),
+        ),
       ),
     );
   }

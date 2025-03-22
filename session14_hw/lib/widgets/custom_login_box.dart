@@ -17,13 +17,13 @@ class Login_box extends StatelessWidget {
       ),
       child: Column(
         children: [
-          SizedBox(height: 20),
+          SizedBox(height: 30),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               children: [
                 Text(
-                  ' Create you account',
+                  'Create you account',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 const Spacer(),
@@ -39,7 +39,7 @@ class Login_box extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 50),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
             child: Row(

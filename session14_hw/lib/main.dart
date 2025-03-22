@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:session14_hw/views/splash_view.dart';
+import 'package:session14_hw/views/splash/splash_view.dart';
 
 void main() {
   runApp(GroceryApp());

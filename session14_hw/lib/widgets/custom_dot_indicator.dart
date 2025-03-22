@@ -2,14 +2,11 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
 class CustomDotIndicator extends StatelessWidget {
-  const CustomDotIndicator({super.key, required this.dotPosition});
-  final double dotPosition;
-
+  const CustomDotIndicator({super.key, required this.dotIndex});
+  final double? dotIndex;
   @override
   Widget build(BuildContext context) {
     return DotsIndicator(
-      //dotsCount: pageLength,
-      //position: currentPage,
       decorator: DotsDecorator(
         activeColor: Colors.green,
         size: const Size.square(9.0),
@@ -19,7 +16,7 @@ class CustomDotIndicator extends StatelessWidget {
         ),
       ),
       dotsCount: 3,
-      position: dotPosition,
+      position: dotIndex!,
     );
   }
 }

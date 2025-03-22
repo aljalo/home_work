@@ -7,8 +7,8 @@ class CustomButton extends StatelessWidget {
     required this.text,
     required this.color,
     required this.onPressed,
-    this.backgroundColor = kPrimaryColor,
-    this.borderSideColor = kPrimaryColor,
+    this.backgroundColor = AppColor.primary,
+    this.borderSideColor = AppColor.primary,
   });
   final String text;
   final Color color;
@@ -30,9 +30,8 @@ class CustomButton extends StatelessWidget {
         text,
         style: TextStyle(
           fontWeight: FontWeight.bold,
-          fontSize: 18,
+          fontSize: 20,
           color: color,
-          //fontFamily: 'Iter',
         ),
       ),
     );

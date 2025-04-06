@@ -1,0 +1,16 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Left - faded -->
+  <path d="M5.66666 1C4.62049 1.43333 3.66991 2.06849 2.8692 2.8692C2.06849 3.66991 1.43334 4.62049 1 5.66666" stroke="#2B0063" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round"/>
+  <!-- Top Right - solid -->
+  <path d="M10.3333 1C11.3795 1.43333 12.3301 2.06849 13.1308 2.8692C13.9315 3.66991 14.5667 4.62049 15 5.66666" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <!-- Bottom Right - solid -->
+  <path d="M15 10.3333C14.5667 11.3795 13.9315 12.3301 13.1308 13.1308C12.3301 13.9315 11.3795 14.5667 10.3333 15" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <!-- Bottom Left - faded -->
+  <path d="M1 10.3333C1.43334 11.3795 2.06849 12.3301 2.8692 13.1308C3.66991 13.9315 4.62049 14.5667 5.66666 15" stroke="#2B0063" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="grad" x1="10.3333" y1="1" x2="13" y2="6" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#060B26" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#1A1F37" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+</svg>

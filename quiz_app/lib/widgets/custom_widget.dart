@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:quiz_app/constatnt.dart';
+import '../styles/colors.dart';
+import '../styles/font_style.dart';
 
 class CustomWidget extends StatelessWidget {
   const CustomWidget({super.key, required this.qNumber, required this.image});

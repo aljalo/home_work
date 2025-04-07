@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/widgets/custom_answer_button.dart';
-import 'package:quiz_app/constatnt.dart';
 import 'package:quiz_app/views/score_screen.dart';
 import 'package:quiz_app/widgets/custom_back_button.dart';
 import 'package:quiz_app/widgets/custom_forword_button.dart';
 import 'package:quiz_app/widgets/custom_widget.dart';
 import 'package:quiz_app/models/question_model.dart';
+import '../styles/colors.dart';
+import '../styles/font_style.dart';
 
 class QuestionScreen extends StatefulWidget {
   const QuestionScreen({super.key});

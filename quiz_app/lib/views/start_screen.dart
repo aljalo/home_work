@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/constatnt.dart';
 import 'package:quiz_app/views/questions_screen.dart';
-
-
 import 'package:quiz_app/widgets/custom_startquiz_button.dart';
+import '../styles/colors.dart';
+import '../styles/font_style.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});

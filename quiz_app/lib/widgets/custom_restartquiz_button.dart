@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/constatnt.dart';
+import '../styles/colors.dart';
+import '../styles/font_style.dart';
 
 class CustomRestartQuizButton extends StatelessWidget {
   const CustomRestartQuizButton({super.key, required this.onTap});

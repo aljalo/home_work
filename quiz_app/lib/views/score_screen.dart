@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/constatnt.dart';
 import 'package:quiz_app/views/start_screen.dart';
 import 'package:quiz_app/widgets/custom_back_button.dart';
 import 'package:quiz_app/widgets/custom_restartquiz_button.dart';
+import '../styles/colors.dart';
+import '../styles/font_style.dart';
 
 class ScoreScreen extends StatelessWidget {
+  const ScoreScreen({Key? key, required this.correctAnswers});
   final int correctAnswers;
-
-  const ScoreScreen({Key? key, required this.correctAnswers}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +23,11 @@ class ScoreScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Correct answere\n $correctAnswers ",
+              "Correct answeres\n $correctAnswers ",
               style: AppTextStyle.h1,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 100),
-            CustomBackButton(
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
 
             CustomRestartQuizButton(
               onTap: () {
@@ -40,6 +35,11 @@ class ScoreScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(builder: (context) => StartScreen()),
                 );
+              },
+            ),
+            CustomBackButton(
+              onTap: () {
+                Navigator.pop(context);
               },
             ),
           ],

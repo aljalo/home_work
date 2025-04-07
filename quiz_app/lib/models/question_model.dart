@@ -18,9 +18,7 @@ class QuestionsItemModel {
   //   return shuffled;
   //}
 
-  // bool checkAnswer(String selectedAnswer) {   //  للتحقق من الإجابة الصحيحة
-  //   return selectedAnswer == correctAnswer;
-  // }
+  //  للتحقق من الإجابة الصحيحة
   bool checkAnswer(String selectedAnswer) {
     return correctAnswers.contains(selectedAnswer);
   }

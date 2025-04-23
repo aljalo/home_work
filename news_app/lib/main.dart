@@ -3,7 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:news_app/views/home_screen.dart';
 
 Future<void> main() async {
-  await dotenv.load();
+  await dotenv.load(fileName: "api_key.env");
   runApp(const MyApp());
 }
 

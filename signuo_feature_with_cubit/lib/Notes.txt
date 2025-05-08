@@ -1,0 +1,10 @@
+create states
+create cubit
+add logic
+provide cubit
+integrate cubit with ui
+trigger cubit
+
+success navigate to home screen
+failure show error message
+Loading state dispaly circular progress indicator

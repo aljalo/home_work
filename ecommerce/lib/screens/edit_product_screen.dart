@@ -1,7 +1,8 @@
+import 'package:ecommerce/cubits/product_cubit/product_cubit.dart';
+import 'package:ecommerce/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../cubits/product_cubit/product_cubit.dart';
-import '../models/product_model.dart';
+
 
 class EditProductScreen extends StatefulWidget {
   final ProductModel product;
@@ -42,32 +43,32 @@ class _EditProductScreenState extends State<EditProductScreen> {
     Navigator.pop(context);
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('تم تعديل المنتج بنجاح')),
+       SnackBar(content: Text('Product updated successfully')),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('تعديل منتج')),
+      appBar: AppBar(title: Text('Edit Product')),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              TextField(controller: titleController, decoration: const InputDecoration(labelText: 'الاسم')),
-              const SizedBox(height: 10),
-              TextField(controller: priceController, keyboardType: TextInputType.number, decoration: const InputDecoration(labelText: 'السعر')),
-              const SizedBox(height: 10),
-              TextField(controller: descriptionController, decoration: const InputDecoration(labelText: 'الوصف')),
-              const SizedBox(height: 10),
-              TextField(controller: imageController, decoration: const InputDecoration(labelText: 'رابط الصورة')),
-              const SizedBox(height: 10),
-              TextField(controller: categoryController, decoration: const InputDecoration(labelText: 'التصنيف')),
-              const SizedBox(height: 20),
+              TextField(controller: titleController, decoration:  InputDecoration(labelText: 'Title')),
+               SizedBox(height: 10),
+              TextField(controller: priceController, keyboardType: TextInputType.number, decoration:  InputDecoration(labelText: 'Price')),
+               SizedBox(height: 10),
+              TextField(controller: descriptionController, decoration:  InputDecoration(labelText: 'Description')),
+               SizedBox(height: 10),
+              TextField(controller: imageController, decoration:  InputDecoration(labelText: 'Image URL')),
+               SizedBox(height: 10),
+              TextField(controller: categoryController, decoration:  InputDecoration(labelText: 'Category')),
+               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: editProduct,
-                child: const Text('Edit Product'),
+                child:  Text('Edit Product'),
               ),
             ],
           ),

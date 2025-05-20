@@ -1,6 +1,7 @@
 
 import 'package:dio/dio.dart';
-import '../models/product_model.dart';
+import 'package:ecommerce/models/product_model.dart';
+
 
 class ProductService {
   final Dio _dio = Dio();

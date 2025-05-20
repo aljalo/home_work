@@ -1,7 +1,7 @@
-import 'package:equatable/equatable.dart';
+import 'package:ecommerce/models/product_model.dart';
+import 'package:ecommerce/services/product_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../models/product_model.dart';
-import '../../services/product_service.dart';
+
 
 part 'product_state.dart';
 

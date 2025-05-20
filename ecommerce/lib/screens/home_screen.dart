@@ -1,8 +1,9 @@
+import 'package:ecommerce/cubits/product_cubit/product_cubit.dart';
+import 'package:ecommerce/cubits/product_detail_cubit/product_detail_cubit.dart';
+import 'package:ecommerce/models/product_model.dart';
+import 'package:ecommerce/screens/add_product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../cubits/product_cubit/product_cubit.dart';
-import '../cubits/product_detail_cubit/product_detail_cubit.dart';
-import '../models/product_model.dart';
 import 'edit_product_screen.dart';
 import 'product_detail_screen.dart';
 
@@ -12,23 +13,26 @@ class HomeScreen extends StatelessWidget {
   void showDeleteDialog(BuildContext context, ProductModel product) {
     showDialog(
       context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text("حذف المنتج"),
-        content: Text('هل تريد حذف "${product.title}"؟'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text("إلغاء"),
+      builder:
+          (ctx) => AlertDialog(
+            title: Text('Delete Product'),
+            content: Text(
+              'Are you sure you want to delete "${product.title}"?',
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text('Cancel'),
+              ),
+              TextButton(
+                onPressed: () {
+                  context.read<ProductCubit>().deleteProduct(product.id);
+                  Navigator.pop(context);
+                },
+                child: Text('Delete', style: TextStyle(color: Colors.red)),
+              ),
+            ],
           ),
-          TextButton(
-            onPressed: () {
-              context.read<ProductCubit>().deleteProduct(product.id);
-              Navigator.pop(context);
-            },
-            child: const Text("حذف", style: TextStyle(color: Colors.red)),
-          ),
-        ],
-      ),
     );
   }
 
@@ -36,7 +40,7 @@ class HomeScreen extends StatelessWidget {
     context.read<ProductDetailCubit>().showProductDetails(product);
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (_) => const ProductDetailScreen()),
+      MaterialPageRoute(builder: (_) => ProductDetailScreen()),
     );
   }
 
@@ -44,10 +48,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("منتجات المتجر"),
+        title: Text('Store Products'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.refresh),
+            icon: Icon(Icons.refresh),
             onPressed: () => context.read<ProductCubit>().fetchProducts(),
           ),
         ],
@@ -55,14 +59,14 @@ class HomeScreen extends StatelessWidget {
       body: BlocBuilder<ProductCubit, ProductState>(
         builder: (context, state) {
           if (state is ProductLoading) {
-            return const Center(child: CircularProgressIndicator());
+            return Center(child: CircularProgressIndicator());
           } else if (state is ProductError) {
-            return Center(child: Text('خطأ: ${state.message}'));
+            return Center(child: Text('Error: ${state.message}'));
           } else if (state is ProductLoaded) {
             final products = state.products;
             return GridView.builder(
-              padding: const EdgeInsets.all(12),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              padding: EdgeInsets.all(12),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
@@ -91,31 +95,43 @@ class HomeScreen extends StatelessWidget {
                               top: 4,
                               child: InkWell(
                                 onTap: () => showDeleteDialog(context, product),
-                                child: const CircleAvatar(
+                                child: CircleAvatar(
                                   backgroundColor: Colors.white,
                                   child: Icon(Icons.delete, color: Colors.red),
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(product.title, maxLines: 1, overflow: TextOverflow.ellipsis),
-                              const SizedBox(height: 4),
+                              Text(
+                                product.title,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              SizedBox(height: 4),
                               Text('\$${product.price}'),
-                              const SizedBox(height: 4),
+                              SizedBox(height: 4),
                               GestureDetector(
                                 onTap: () {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (_) => EditProductScreen(product: product)),
+                                    MaterialPageRoute(
+                                      builder:
+                                          (_) => EditProductScreen(
+                                            product: product,
+                                          ),
+                                    ),
                                   );
                                 },
-                                child: const Text('change', style: TextStyle(color: Colors.blue)),
+                                child: Text(
+                                  'change',
+                                  style: TextStyle(color: Colors.blue),
+                                ),
                               ),
                             ],
                           ),
@@ -127,12 +143,17 @@ class HomeScreen extends StatelessWidget {
               },
             );
           }
-          return const SizedBox();
+          return SizedBox();
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pushNamed(context, '/add'),
-        child: const Icon(Icons.add),
+        onPressed:
+            () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => AddProductScreen()),
+            ),
+
+        child: Icon(Icons.add),
       ),
     );
   }

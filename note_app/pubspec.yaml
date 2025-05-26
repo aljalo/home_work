@@ -1,0 +1,36 @@
+name: note_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  async_cubits: ^0.2.0
+  build_runner: ^2.4.15
+  cupertino_icons: ^1.0.8
+  flutter:
+    sdk: flutter
+  flutter_bloc: null
+  font_awesome_flutter: ^10.8.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  intl: ^0.20.2
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+
+    - family: RobotoSlab
+      fonts:
+        - asset: assets/fonts/RobotoSlab-VariableFont_wght.ttf
